@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -154,7 +154,6 @@
     <ClInclude Include="DependantConnection.h" />
     <ClInclude Include="interface.h" />
     <ClInclude Include="Medical.h" />
-    <ClInclude Include="Module.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="OrbitInfo.h" />
     <ClInclude Include="pch.h" />
@@ -166,7 +165,6 @@
     <ClCompile Include="DependantConnection.cpp" />
     <ClCompile Include="Interface.cpp" />
     <ClCompile Include="Medical.cpp" />
-    <ClCompile Include="Module.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="OrbitInfo.cpp" />
     <ClCompile Include="pch.cpp">

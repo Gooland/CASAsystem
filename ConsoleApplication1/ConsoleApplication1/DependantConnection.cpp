@@ -7,6 +7,12 @@ DependantConnection::DependantConnection()
 }
 
 
+DependantConnection::DependantConnection(int iNodeNum, int iSensorInNum, int iSensorOutNum, int iSign, double iNumQue, double iNumResponse)
+{
+
+}
+
+
 int DependantConnection::getNodeNum()
 {
 	return nodeNum;

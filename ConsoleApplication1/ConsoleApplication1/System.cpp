@@ -2,6 +2,7 @@
 #include "System.h"
 #include <string>
 #include <fstream>
+#include <iostream>
 
 
 
@@ -13,6 +14,7 @@ System::System(std::string file)
 	fileIn.open(file);
 	if (fileIn.open)
 	{
+		int lineCount = 0;
 		while (getline(fileIn, line))
 		{
 			if (line.find("Node") != std::string::npos)
@@ -20,7 +22,7 @@ System::System(std::string file)
 				nodeV.push_back(Node());
 				nodeNum++;
 			}
-			if (line.find("sensor") != std::string::npos)
+			else if (line.find("sensor") != std::string::npos)// need to fix the for loop because starting at 8 is not always right with the interface
 			{
 				bool foundComa = false;
 				std::string tempData, tempUnit;
@@ -39,8 +41,23 @@ System::System(std::string file)
 						tempUnit.push_back(line[i]);
 					}
 				}
+				nodeV[--nodeNum].addSensor(std::stoi(tempData), tempUnit);
+			}
+			else if (line.find("dependant") != std::string::npos)//same problem in the for loop as sensor 
+			{
+
 
 			}
+			else if (line.find("control") != std::string::npos)
+			{
+
+			}
+			else
+			{
+				std::cout << "error in line: " << lineCount << std::endl;
+			}
+
+			lineCount++;
 		}
 		fileIn.close();
 	}
@@ -73,11 +90,14 @@ void System::reset()
 }
 
 
+void System::nodeChangeAlert(Node* nChanged)
+{
+
+}
+
+
 System::~System()
 {
 }
 
-void System::nodeChangeAlert(Node* nChanged)
-{
-	
-}
+

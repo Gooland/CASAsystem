@@ -22,20 +22,24 @@ System::System(std::string file)
 			}
 			if (line.find("sensor") != std::string::npos)
 			{
-				std::string temp;
-				for (int i=8; i < line.size(); i++)
+				bool foundComa = false;
+				std::string tempData, tempUnit;
+				for (int i=8; i < line.size(); i++)//goes throught the line and finds unit and data and puts them in temp strings
 				{
-					if (line[i] != ',')
+					if (line[i] != ',' || foundComa==false)
 					{
-						temp.push_back(line[i]);
+						tempData.push_back(line[i]);
 					}
-					else
+					else if(line[i] = ',')
 					{
-
+						foundComa = true;
 					}
-
-					
+					else if(line[i] != ')')
+					{
+						tempUnit.push_back(line[i]);
+					}
 				}
+
 			}
 		}
 		fileIn.close();

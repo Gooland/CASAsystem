@@ -8,14 +8,15 @@
 
 System::System(std::string file)
 {
-	int nodeNum, sensorNum = 0;
+	int nodeNum = -1;
+	bool done = false;
 	std::string line;
 	std::ifstream fileIn;
 	fileIn.open(file);
 	if (fileIn.open)
 	{
 		int lineCount = 0;
-		while (getline(fileIn, line))
+		while (getline(fileIn, line) || done != true)
 		{
 			if (line.find("Node") != std::string::npos)
 			{
@@ -26,9 +27,9 @@ System::System(std::string file)
 			{
 				bool foundComa = false;
 				std::string tempData, tempUnit;
-				for (int i=8; i < line.size(); i++)//goes throught the line and finds unit and data and puts them in temp strings
+				for (int i=10; i < line.size(); i++)//goes throught the line and finds unit and data and puts them in temp strings
 				{
-					if (line[i] != ',' || foundComa==false)
+					if (line[i] != ',' && foundComa==false)
 					{
 						tempData.push_back(line[i]);
 					}
@@ -41,16 +42,26 @@ System::System(std::string file)
 						tempUnit.push_back(line[i]);
 					}
 				}
-				nodeV[--nodeNum].addSensor(std::stoi(tempData), tempUnit);
+				nodeV[nodeNum].addSensor(std::stoi(tempData), tempUnit);
 			}
 			else if (line.find("dependant") != std::string::npos)//same problem in the for loop as sensor 
 			{
+				int foundComa = 0;
+				for (int i = 18; i < line.size(); i++)
+				{
 
+
+
+				}
 
 			}
 			else if (line.find("control") != std::string::npos)
 			{
 
+			}
+			else if (line.find("-normal") != std::string::npos)
+			{
+				done = true;
 			}
 			else
 			{

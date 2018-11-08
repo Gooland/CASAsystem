@@ -46,10 +46,37 @@ System::System(std::string file)
 			}
 			else if (line.find("dependant") != std::string::npos)//same problem in the for loop as sensor 
 			{
-				int foundComa = 0;
+				int foundComma = 0;
 				for (int i = 18; i < line.size(); i++)
 				{
+					if (foundComma == 0)
+					{
 
+					}
+					else if (foundComma == 1)
+					{
+
+					}
+					else if (foundComma == 2)
+					{
+
+					}
+					else if (foundComma == 3)
+					{
+
+					}
+					else if (foundComma == 4)
+					{
+
+					}
+					else if (foundComma == 5)
+					{
+
+					}
+					else if (foundComma == 6)
+					{
+
+					}
 
 
 				}

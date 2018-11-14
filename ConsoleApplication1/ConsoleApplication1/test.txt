@@ -1,12 +1,12 @@
 Node:0
 sensor:0(30,degrees)
 sensor:1(1,on)
-dependant:0(node:3,1>30,2=0)
+dependant:0(3,1>30,2=0)
 control:0(node2)
 -normal
 Node:0
 sensor:0(30,degrees)
 sensor:1(1,on)
-dependant:0(node:3,1>30,2=0)
+dependant:0(3,1>30,2=0)
 control:0(node2)
 

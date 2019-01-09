@@ -46,6 +46,7 @@ System::System(std::string file)
 			}
 			else if (line.find("dependant") != std::string::npos)//same problem in the for loop as sensor 
 			{
+				int node, independantSensor, sighn1, Que1, dependentSensor, sign2, que2;
 				int foundComma = 0;
 				for (int i = 18; i < line.size(); i++)
 				{

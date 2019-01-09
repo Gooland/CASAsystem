@@ -8,7 +8,7 @@
 
 System::System(std::string file)
 {
-	int nodeNum = -1;
+	int nodeNum = -1;// this can be replaced with finding the size of  nodeV
 	bool done = false;
 	std::string line;
 	std::ifstream fileIn;
@@ -16,7 +16,7 @@ System::System(std::string file)
 	if (fileIn.open)
 	{
 		int lineCount = 0;
-		while (getline(fileIn, line) || done != true)
+		while (getline(fileIn, line) && done != true)
 		{
 			if (line.find("Node") != std::string::npos)
 			{
@@ -48,11 +48,11 @@ System::System(std::string file)
 			{
 				int node, independantSensor, sighn1, Que1, dependentSensor, sign2, que2;
 				int foundComma = 0;
-				for (int i = 18; i < line.size(); i++)
+				for (int i = 11; i < line.size(); i++)
 				{
 					if (foundComma == 0)
 					{
-
+						
 					}
 					else if (foundComma == 1)
 					{

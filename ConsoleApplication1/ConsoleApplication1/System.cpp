@@ -48,6 +48,8 @@ System::System(std::string file)
 			{
 				int node, independantSensor, sighn1, Que1, dependentSensor, sign2, que2;
 				int foundComma = 0;
+
+
 				for (int i = 18; i < line.size(); i++)
 				{
 					if (foundComma == 0)

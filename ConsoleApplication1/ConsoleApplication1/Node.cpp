@@ -23,7 +23,7 @@ void Node::changeSensor(int sensorNum, Sensor newSensor)
 
 
 
-void Node::cascade(int nodeNum, Node& node)
+void Node::cascade(int nodeNum, Node& node)// this probebly needs work
 {
 	std::vector <DependantConnection> tempV;  //rename
 	for (int i = 0; i < dependantV.size(); i++)

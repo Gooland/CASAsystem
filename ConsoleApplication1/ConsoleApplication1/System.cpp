@@ -46,42 +46,42 @@ System::System(std::string file)
 			}
 			else if (line.find("dependant") != std::string::npos)//same problem in the for loop as sensor 
 			{
-				int node, independantSensor, sighn1, Que1, dependentSensor, sign2, que2;
+				std::string nodeS, independantSensorS, signS, Que1S, dependentSensorS, que2S;
+				int node, independantSensor, sign, Que1, dependentSensor, que2;
 				int foundComma = 0;
+				
 				for (int i = 11; i < line.size(); i++)
 				{
-					if (foundComma == 0)
+					if (line[i] == ',' || line[i] == ':')// iterates foundComma
+						foundComma++;
+					else
 					{
-						
+						if (foundComma == 0)
+						{
+							nodeS.push_back(line[i]);
+						}
+						else if (foundComma == 1)
+						{
+							independantSensorS.push_back(line[i]);
+						}
+						else if (foundComma == 2)
+						{
+							signS.push_back(line[i]);
+						}
+						else if (foundComma == 3)
+						{
+							Que1S.push_back(line[i]);
+						}
+						else if (foundComma == 4)
+						{
+							dependentSensorS.push_back(line[i]);
+						}
+						else if (foundComma == 6)//skips 5 in order to not record the equal sign
+						{
+							que2S.push_back(line[i]);
+						}
 					}
-					else if (foundComma == 1)
-					{
-
-					}
-					else if (foundComma == 2)
-					{
-
-					}
-					else if (foundComma == 3)
-					{
-
-					}
-					else if (foundComma == 4)
-					{
-
-					}
-					else if (foundComma == 5)
-					{
-
-					}
-					else if (foundComma == 6)
-					{
-
-					}
-
-
 				}
-
 			}
 			else if (line.find("control") != std::string::npos)
 			{
@@ -118,7 +118,7 @@ void System::setNodeNorm(int)
 
 }
 
-void System::exit()
+void System::systemExit()
 {
 
 }

@@ -14,7 +14,7 @@ public:
 	
 	void setNodeNorm(int);//return a node to normal
 	
-	void exit();//tells class to save and close
+	void systemExit();//tells class to save and close
 	
 	void reset();//tells class to resset all modules to normal
 	~System();

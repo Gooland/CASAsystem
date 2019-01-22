@@ -49,8 +49,17 @@ System::System(std::string file)
 				std::string nodeS, independantSensorS, signS, Que1S, dependentSensorS, que2S;
 				int node, independantSensor, sign, Que1, dependentSensor, que2;
 				int foundComma = 0;
+<<<<<<< HEAD
 				
+=======
+<<<<<<< HEAD
+
+
+				for (int i = 18; i < line.size(); i++)
+=======
+>>>>>>> cba153e4da11aa46bf035965110ddbe50fdcf595
 				for (int i = 11; i < line.size(); i++)
+>>>>>>> 54412a257374b7c6dd887029d744630bc79ceac8
 				{
 					if (line[i] == ',' || line[i] == ':')// iterates foundComma
 						foundComma++;

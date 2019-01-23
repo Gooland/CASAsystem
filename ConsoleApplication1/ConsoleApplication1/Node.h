@@ -10,7 +10,7 @@ public:
 	Node();
 	Sensor getSensor(int);
 	void changeSensor(int, Sensor);
-	void cascade(int, Node&);
+	void cascade(double, int, int);
 	void addSensor(double, std::string);
 	void addDependantConnection(int, int, int, int, double, double);
 	void addDependantConnection();
